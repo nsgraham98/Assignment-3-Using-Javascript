@@ -3,8 +3,8 @@
 // Do any of these variables need to be initialized when the page is loaded? 
 // When do they need to be reset or updated?
 
-var costPerDay = 35
-var dayCounter = 0
+var costPerDay = 35;
+var dayCounter = 0;
 
 var monday = document.getElementById("monday");
 var tuesday = document.getElementById("tuesday");
@@ -12,11 +12,11 @@ var wednesday = document.getElementById("wednesday");
 var thursday = document.getElementById("thursday");
 var friday = document.getElementById("friday");
 
-var mondaySelected = false
-var tuesdaySelected = false
-var wednesdaySelected = false
-var thursdaySelected = false
-var fridaySelected = false
+var mondaySelected = false;
+var tuesdaySelected = false;
+var wednesdaySelected = false;
+var thursdaySelected = false;
+var fridaySelected = false;
 
 /********* colour change days of week *********/
 // when the day buttons are clicked, we will apply the "clicked" class to that element, and update any other relevant variables. Then, we can recalculate the total cost.
@@ -57,7 +57,7 @@ function addClassClicked()
         dayCounter += 1;
         fridaySelected = true;
     }
-    recalculate()
+    recalculate();
 }
 
 
@@ -65,25 +65,25 @@ function addClassClicked()
 /********* clear days *********/
 // when the clear-button is clicked, the "clicked" class is removed from all days, any other relevant variables are reset, and the calculated cost is set to 0.
 
-clearButton = document.getElementById("clear-button");
+var clearButton = document.getElementById("clear-button");
 clearButton.addEventListener("click", clearAll);
 
 function clearAll()
 {
-    dayCounter = 0
-    monday.classList.remove("clicked")
-    tuesday.classList.remove("clicked")
-    wednesday.classList.remove("clicked")
-    thursday.classList.remove("clicked")
-    friday.classList.remove("clicked")
+    dayCounter = 0;
+    monday.classList.remove("clicked");
+    tuesday.classList.remove("clicked");
+    wednesday.classList.remove("clicked");
+    thursday.classList.remove("clicked");
+    friday.classList.remove("clicked");
 
-    mondaySelected = false
-    tuesdaySelected = false
-    wednesdaySelected = false
-    thursdaySelected = false
-    fridaySelected = false
+    mondaySelected = false;
+    tuesdaySelected = false;
+    wednesdaySelected = false;
+    thursdaySelected = false;
+    fridaySelected = false;
 
-    recalculate()
+    recalculate();
 }
 
 
@@ -103,7 +103,7 @@ function changeRateHalf()
         halfDayButton.classList.add("clicked");
         fullDayButton.classList.remove("clicked");
         costPerDay = 20;
-        recalculate()
+        recalculate();
     }
 }
 
@@ -115,8 +115,8 @@ function changeRateFull()
     {
         fullDayButton.classList.add("clicked");
         halfDayButton.classList.remove("clicked");
-        costPerDay = 35
-        recalculate()
+        costPerDay = 35;
+        recalculate();
     }
 }
 
@@ -127,7 +127,7 @@ function recalculate()
 {
     var costLabel = document.getElementById("calculated-cost");
     var totalCost = 0;
-    totalCost = dayCounter * costPerDay
+    totalCost = dayCounter * costPerDay;
     costLabel.innerHTML = totalCost;
 }
 
